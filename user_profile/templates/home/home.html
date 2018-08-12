@@ -305,17 +305,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
         .hideme{
             opacity: 0;
         }
-        .cover{
-            background: rgb(238,238,238); /* Old browsers */
-background: -moz-linear-gradient(top, black -4%, transparent 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, black -4%,transparent 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, black -4%,transparent 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
-    position: absolute;
+        .cover1{
+            background: -moz-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(255,215,0,0) 50%, rgba(5,3,2,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%,rgba(255,215,0,0) 50%,rgba(5,3,2,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(255,215,0,0) 50%,rgba(5,3,2,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#050302',GradientType=0 ); /* IE6-9 */
+            position: absolute;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
+        }
+        .cover2{
+            background: -moz-linear-gradient(top, #060403 0%, rgba(255,215,0,0) 50%, rgba(5,3,2,1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, #060403 0%,rgba(255,215,0,0) 50%,rgba(5,3,2,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, #060403 0%,#08080863 50%,rgba(5,3,2,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#050302',GradientType=0 ); /* IE6-9 */
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .background-gradient-gold{
+            background: -moz-radial-gradient(center, ellipse cover, rgba(255,215,0,1) 0%, rgba(255,215,0,0) 100%); /* FF3.6-15 */
+            background: -webkit-radial-gradient(center, ellipse cover, rgba(255,215,0,1) 0%,rgba(255,215,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: radial-gradient(ellipse at center, rgba(255,215,0,1) -7%,rgba(255,215,0,0) 65%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd700', endColorstr='#00ffd700',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
         }
     </style>
 </head>
@@ -503,16 +520,54 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eeeeee', end
     </div>
 
         </div>
-        <div class="row" style="height: 100vh">
-            <div class="hideme" style="background-image: url('{% static 'home/5.png' %}');background-repeat: no-repeat;height: 900px;position: relative">
-                <h1>asd</h1>
-                <div class="cover" >a</div>
-            </div>
-        </div>
-        <div class="row" style="height: 100vh">
+
+        <div class="row" style="height: 100vh;overflow: hidden">
             <div class="hideme" style="background-image: url('{% static 'home/6.png' %}');background-repeat: no-repeat;height: 100%;position: relative;background-size: cover">
                 <h1>asd</h1>
-                <div class="cover" >a</div>
+                <div class="cover1" >&nbsp;</div>
+            </div>
+        </div>
+        <div class="row" style="height: 100vh;overflow: hidden">
+            <div class="hideme" style="background-image: url('{% static 'home/5.png' %}');background-repeat: no-repeat;height: 100%;position: relative">
+                <div class="cover2" >&nbsp;</div>
+                <div class="col-xs-8" style="padding-top: 20px">
+                    <h1 class="text-center" style="color: #ffd700">برنامه تمرین بعدی خود را پیدا کنید</h1>
+                    <h3 class="text-center" style="font-family: sans-serif;color: white;direction: ltr">What's your goal?</h3>
+                    <div class="row" style="width: 80%;margin: auto;margin-top: 60px;">
+                        <div class="col-xs-6 text-center" style="margin-bottom: 20px">
+                            <img src="{% static 'home/performance.jpeg' %}" class="img-circle" alt="" width="100px" height="100px" style="border: 1px solid #ffd700">
+                            <h4 class="gold">performance</h4>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-bottom: 20px">
+                            <img src="{% static 'home/get-fit.jpeg' %}" class="img-circle" alt="" width="100px" height="100px" style="border: 1px solid #ffd700">
+                            <h4 class="gold">Get Fit</h4>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-bottom: 20px">
+                            <img src="{% static 'home/gain-strength.jpeg' %}" class="img-circle" alt="" width="100px" height="100px" style="border: 1px solid #ffd700">
+                            <h4 class="gold">Gain Strength</h4>
+                        </div>
+                        <div class="col-xs-6 text-center" style="margin-bottom: 20px">
+                            <img src="{% static 'home/lose-weight.jpeg' %}" class="img-circle" alt="" width="100px" height="100px" style="border: 1px solid #ffd700">
+                            <h4 class="gold">Lose Weight</h4>
+                        </div>
+                        <div class="col-xs-12 text-center" style="margin-bottom: 20px">
+                            <img src="{% static 'home/buid-muscle.jpeg' %}" class="img-circle" alt="" width="100px" height="100px" style="border: 1px solid #ffd700">
+                            <h4 class="gold">Build Muscle</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row" style=" background-size: cover;background-position: right;position: relative; height: 100vh;background-image: url('{% static 'home/pro.jpg' %}">
+            <h1 style="color: goldenrod">a</h1>
+            <div class="cover2" >&nbsp;</div>
+            <div class="row " >
+                <div class="col-xs-6 col-xs-offset-3 background-gradient-gol" style="height: 500px;padding-top: 200px">
+                    <div class="text-center gold" style="padding: 10px;border: 1px solid #ffd700;border-radius: 10px 10px 10px 0px;background-color: #0000002e ;box-shadow: 0 0px 57px 0 #ffd700;">
+                    <h4 style="line-height: 40px">گروه اکسيژن افتخار دارد تا با در اختيار داشتن مربيان مجرب شنا کلاس هاي گروهي آکوآفيت ، آب درماني و آموزش شنا را در مجموعه ي آبي برگزار نمايد</h4>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row" style=" background-size: cover;background-position: right; background-color: black;height: 100vh;background-image: url('{% static 'home/256762.jpg' %}">
